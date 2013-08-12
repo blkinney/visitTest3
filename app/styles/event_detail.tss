@@ -1,0 +1,197 @@
+'Window': {
+	layout: 'vertical',
+	backgroundColor: '#fff'
+}
+
+'Label': {
+	width: 'auto',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	font: {
+		fontSize: 14
+	}
+}
+
+'#dateTitleSection': {
+	height: "20%",
+	width: "100%",
+	top: 0
+}
+
+'#dayView': {
+	height: "100%",
+	top: 0,
+	left: "0%",
+	width: "30%"
+}
+
+'#date_dow': {
+	top: "25%",
+	left: "25%",
+	width: "10%",
+	font: {
+		fontSize: 10
+	}
+}
+
+'#date_day': {
+	top: "20%",
+	font: {
+		fontSize: 28,
+		fontWeight: 'bold'
+	}
+}
+
+'#date_month': {
+	top: "55%",
+	font: {
+		fontSize: 12,
+		fontWeight: 'bold'
+	}
+}
+
+'#title': {
+	left: "30%",
+	top: "20%",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 20
+	}
+}
+
+'#buttonView': {
+	height: "10%",
+	top: "20%",
+	width: "100%"
+}
+
+'#shareView': {
+	height: "100%",
+	top: 0,
+	left: "50%"
+}
+
+'#calView': {
+	height: "100%",
+	top: 0,
+	right: "50%"
+}
+
+'#timeSection': {
+	height: "20%",
+	top: "30%",
+	//width: 'auto',
+	right: "5%",
+	left: "5%"
+}
+
+'#startView': {
+	height: "50%",
+	top: 0,
+	width: 'auto',
+	borderColor: 'black'
+}
+
+'#start': {
+	top: 0,
+	left: "5%",
+	font: {
+		fontWeight: 'bold'
+		}
+
+}
+
+'#time': {
+	top: "50%",
+	left: "10%"
+}
+
+'#endView': {
+	top: "50%",
+	height: "50%",
+	//width: 'auto'
+	borderColor: 'black'
+}
+
+'#end': {
+	top: 0,
+	left: "5%",
+	font: {
+		fontWeight: 'bold'
+		}
+}
+
+'#endTime': {
+	top: "50%",
+	left: "10%"
+}
+
+'#phoneView': {
+	height: "10%",
+	left: "5%",
+	right: "5%",
+	//width: "100",
+	top: "50%",
+	borderColor: 'black'
+}
+
+'#phoneTitle': {
+	top: 0,
+	left: "5%",
+	font: {
+		fontWeight: 'bold'
+		}
+}
+
+'#phone': {
+	top: "50%",
+	left: "10%"
+}
+
+
+
+'#addrView': {
+	height: "20%",
+	left: "5%",
+	right: "5%",
+	//width: "95%",
+	top: "60%",
+	borderColor: 'black'
+	
+}
+
+'#addrTitle': {
+	top: 0,
+	left: "5%",
+	font: {
+		fontWeight: 'bold'
+		}
+}
+
+
+
+/*'#addr': {
+	top: "50%",
+	left: 0,
+	backgroundColor: 'pink'
+}*/
+
+'#place': {
+	top: "25%",
+	left: "10%"
+}
+
+'#street': {
+	top: "50%",
+	left: "10%"
+}
+
+'#citZip': {
+	top: "75%",
+	left: "10%"
+}
+
+'#scroll': {
+	top: "80%",
+	height: "30%"
+}
+

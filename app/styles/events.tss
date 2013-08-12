@@ -1,0 +1,21 @@
+".container": {
+	backgroundColor: "white"
+}
+
+"#weekView":{
+	height: "15%",
+	top: 0,
+	backgroundColor: "white",
+	borderColor: "gray"
+}
+
+"#weekNow":{
+	font: {
+		fontWeight: 'bold',
+		fontSize: 14
+	}
+}
+
+"#table":{
+	top: "15%"
+}

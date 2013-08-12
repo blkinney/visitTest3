@@ -1,0 +1,47 @@
+<Alloy>
+	<Window id="eventWindow" title="Event Details">
+		<ScrollView id="scrollView" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="false" height="100%" width="100%">
+			<View id="dateTitleSection">
+				<View id="dayView">
+					<Label id='date_dow'/>
+					<Label id='date_day'/>
+					<Label id='date_month'/>
+				</View>
+				<Label id='title'>
+			</View>
+			<View id="buttonView">
+				<View id="shareView">
+					<Button id="shareButton" onClick="doClickShare" title="Share" top="0" width='auto' height="25" backgroundColor="#fff"/>
+				</View>
+				<View id="calView">
+					<Button id="calButton" onClick="doClickCal" title="Add to Calendar" top="0" width='auto' height="25" backgroundColor="#fff"/>
+				</View>
+			</View>
+			<View id="timeSection">
+				<View id="startView">
+					<Label id='start' text='Start Time'/>
+					<Label id='time'/>
+				</View>
+				<View id="endView">
+					<Label id='end' text='End Time'/>
+					<Label id='endTime'/>
+				</View>
+			</View>
+			<View id="phoneView">
+				<Label id='phoneTitle' text='Phone Number'/>
+				<Label id='phone'/>
+				<Button id="phoneButton" onClick="doClickPhone" title="Call" top="5" width='auto' height="25" right="5%" backgroundColor="#fff"/>
+			</View>
+			<View id="addrView">
+				<Label id='addrTitle' text='Address'/>
+				<Label id='place'/>
+				<Label id='street'/>
+				<Label id='citZip'/>
+				<Button id="mapButton" onClick="doClickMap" title="Open Map" top="5" width='auto' height="25" right="5%" backgroundColor="#fff"/>
+			</View>
+			<View id="scroll">
+				<Label id='works' text='SCROLLVIEW WORKS'/>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

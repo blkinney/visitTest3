@@ -1,0 +1,5 @@
+<Alloy>
+	<TabGroup>
+		<Require src="events"/>
+	</TabGroup>
+</Alloy>

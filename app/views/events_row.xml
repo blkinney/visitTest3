@@ -1,0 +1,16 @@
+<Alloy>
+	<Collection src="events" />
+	<TableViewRow backgroundColor='white' hasChild='true'>
+		<View id='event_row'>
+			<View id='event_date'>
+				<Label id='date_dow' text='{date_dow}'/>
+				<Label id='date_day' text='{date_day}'/>
+			</View>
+			<View id='event_description'>
+				<Label id='title' text='{title}'/>
+				<Label id='time' text='{time}'/>
+				<Label id='location' text='{location}'/>
+			</View>	
+		</View>
+	</TableViewRow>
+</Alloy>

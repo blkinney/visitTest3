@@ -1,0 +1,15 @@
+<Alloy>
+	<Collection src="events" />
+	<Tab id="eventsTab" title="Events" hasChild='true'>
+		<Window id="eventsWindow" title="Events" class="events">
+			<View id="weekView">
+				<Button id="prevWeekButton" onClick="doClickPrev" title=" < " top="25%" width='auto' height="50%" left="5%" backgroundColor="#fff"/>
+				<Label id='weekNow'/>
+				<Button id="nextWeekButton" onClick="doClickNext" title=" > " top="25%" width='auto' height="50%" right="5%" backgroundColor="#fff"/>
+			</View>
+			<TableView id="table" dataCollection="events" dataFunction="updateUi" dataTransform="transformData">
+				<Require src="events_row">
+			</TableView>
+		</Window>
+	</Tab>
+</Alloy>
