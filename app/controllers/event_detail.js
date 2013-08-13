@@ -1,6 +1,4 @@
-var strftime = require('strftime');
 var moment = require("moment");
-
 var args = arguments[0] || {}
 var events = args.events;
 
@@ -12,13 +10,14 @@ $.place.text = args.data.attributes.place;
 $.street.text = args.data.attributes.street;
 $.citZip.text = args.data.attributes.citZip;
 
-var events = Alloy.Collections.events;
+var date = moment.unix(args.data.attributes.time);
+var dateEnd = moment.unix(args.data.attributes.end);
 
-$.date_dow.text = strftime('%a', events.get('time')).toUpperCase();
-$.date_month.text = strftime('%b', events.get('time')).toUpperCase();
-$.date_day.text = strftime('%d', events.get('time'));
-$.time.text = strftime('%l:%M %p', events.get('time')) + ' on ' + strftime('%d/%b', events.get('end'));
-$.endTime.text = strftime('%l:%M %p', events.get('time')) + ' on ' + strftime('%d/%b', events.get('end'));
+$.date_dow.text = date.format("ddd").toUpperCase();
+$.date_month.text = date.format("MMM");
+$.date_day.text = date.format("DD");
+$.time.text = date.format("h:mm a") + ' on ' + date.format("MMMM Do, YYYY");
+$.endTime.text = dateEnd.format("h:mm a") + ' on ' + dateEnd.format("MMMM Do, YYYY");
 
 function doClickShare(e){
     Titanium.API.info("You clicked the Share button");
@@ -34,17 +33,18 @@ var calendar = require('com.gs.calendar');
 
 function doClickCal(e){
     Titanium.API.info("You clicked the Calendar button");
-    
-    
- 
-	var startDate = events.get('time');			// event should start now
-	var endDate = events.get('end');
+
+	var startDate = moment.unix(args.data.attributes.time);	// event should start now
+	var endDate = moment.unix(args.data.attributes.end);
+	
+	// startDate.format("MMMM D, YYYY");
+	// endDate.format("MMMM D, YYYY");
 	
     // create and show the event dialog
     var eventDialog = calendar.createEventDialog({
-        eventTitle: args.data.attributes.title,	// optional
-        eventStartDate:startDate,	// optional
-        eventEndDate:endDate,		// optional
+        eventTitle:args.data.attributes.title,	// optional
+        eventStartDate:startDate.toDate(),	// optional
+        eventEndDate:endDate.toDate(),		// optional
         eventLocation:args.data.attributes.location,	// optional
         eventNotes:"Note",	// optional
         

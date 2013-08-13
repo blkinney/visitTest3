@@ -9,12 +9,12 @@ function Controller() {
     }
     function doClickCal() {
         Titanium.API.info("You clicked the Calendar button");
-        var startDate = events.get("time");
-        var endDate = events.get("end");
+        var startDate = moment.unix(args.data.attributes.time);
+        var endDate = moment.unix(args.data.attributes.end);
         var eventDialog = calendar.createEventDialog({
             eventTitle: args.data.attributes.title,
-            eventStartDate: startDate,
-            eventEndDate: endDate,
+            eventStartDate: startDate.toDate(),
+            eventEndDate: endDate.toDate(),
             eventLocation: args.data.attributes.location,
             eventNotes: "Note",
             animated: true,
@@ -86,7 +86,7 @@ function Controller() {
     });
     $.__views.dateTitleSection.add($.__views.dayView);
     $.__views.date_dow = Ti.UI.createLabel({
-        width: "10%",
+        width: "8%",
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         font: {
             fontSize: 10
@@ -366,22 +366,22 @@ function Controller() {
     $.__views.scroll.add($.__views.works);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var strftime = require("strftime");
-    require("moment");
+    var moment = require("moment");
     var args = arguments[0] || {};
-    var events = args.events;
+    args.events;
     $.parentController = args.parentTab;
     $.title.text = args.data.attributes.title;
     $.phone.text = args.data.attributes.phone;
     $.place.text = args.data.attributes.place;
     $.street.text = args.data.attributes.street;
     $.citZip.text = args.data.attributes.citZip;
-    var events = Alloy.Collections.events;
-    $.date_dow.text = strftime("%a", events.get("time")).toUpperCase();
-    $.date_month.text = strftime("%b", events.get("time")).toUpperCase();
-    $.date_day.text = strftime("%d", events.get("time"));
-    $.time.text = strftime("%l:%M %p", events.get("time")) + " on " + strftime("%d/%b", events.get("end"));
-    $.endTime.text = strftime("%l:%M %p", events.get("time")) + " on " + strftime("%d/%b", events.get("end"));
+    var date = moment.unix(args.data.attributes.time);
+    var dateEnd = moment.unix(args.data.attributes.end);
+    $.date_dow.text = date.format("ddd").toUpperCase();
+    $.date_month.text = date.format("MMM");
+    $.date_day.text = date.format("DD");
+    $.time.text = date.format("h:mm a") + " on " + date.format("MMMM Do, YYYY");
+    $.endTime.text = dateEnd.format("h:mm a") + " on " + dateEnd.format("MMMM Do, YYYY");
     var calendar = require("com.gs.calendar");
     __defers["$.__views.shareButton!click!doClickShare"] && $.__views.shareButton.addEventListener("click", doClickShare);
     __defers["$.__views.calButton!click!doClickCal"] && $.__views.calButton.addEventListener("click", doClickCal);

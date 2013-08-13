@@ -1,3 +1,5 @@
 module.exports = {
-    dependencies: {}
+    dependencies: {
+        eventsCalendar: "1.0"
+    }
 };

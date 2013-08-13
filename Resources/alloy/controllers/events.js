@@ -17,10 +17,11 @@ function Controller() {
     }
     function transformData(model) {
         var attrs = model.toJSON();
-        attrs.date_day = strftime("%d", events.get("time"));
-        attrs.date_dow = strftime("%a", events.get("time")).toUpperCase();
-        attrs.time = "from " + strftime("%l:%M %p", events.get("time")) + " to" + strftime("%l:%M %p", events.get("end"));
-        attrs.row_color = "#fff";
+        var date = moment.unix(model.get("time"));
+        var dateEnd = moment.unix(model.get("end"));
+        attrs.date_day = date.format("DD");
+        attrs.date_dow = date.format("ddd");
+        attrs.time = "from " + date.format("h:mm a") + " to" + dateEnd.format("h:mm a");
         return attrs;
     }
     function doClickNext() {
@@ -105,11 +106,10 @@ function Controller() {
         __alloyId7.off("fetch destroy change add remove reset", updateUi);
     };
     _.extend($, $.__views);
-    var strftime = require("strftime");
     var moment = require("moment");
     var events = Alloy.Collections.events;
-    var currentDay = moment().startOf("week");
-    var currentDayNext = moment().endOf("week");
+    var currentDay = moment().day(1);
+    var currentDayNext = moment().day(7);
     events.thisWeek(currentDay, currentDayNext);
     $.weekNow.text = currentDay.format("MM/DD/YYYY") + " - " + currentDayNext.format("MM/DD/YYYY");
     $.table.addEventListener("click", function(_e) {

@@ -51,7 +51,7 @@ model = Alloy.M("events", exports.definition, [ function(migration) {
         addr: "Fishers Library Five Municipal Drive Fishers, IN 46038",
         time: "1376697601",
         end: "1376704801",
-        phone: "111-555-4444",
+        phone: "(111) 555-4444",
         location: "Cool Place",
         description: "Description One"
     }, {
@@ -62,7 +62,7 @@ model = Alloy.M("events", exports.definition, [ function(migration) {
         addr: "Fishers Library Five Municipal Drive Fishers, IN 46038",
         time: "1377129601",
         end: "1377136801",
-        phone: "222-555-4444",
+        phone: "(222) 555-4444",
         location: "Super Cool Place",
         description: "Description Two"
     } ];

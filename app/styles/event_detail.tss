@@ -27,7 +27,7 @@
 '#date_dow': {
 	top: "25%",
 	left: "25%",
-	width: "10%",
+	width: "8%",
 	font: {
 		fontSize: 10
 	}
